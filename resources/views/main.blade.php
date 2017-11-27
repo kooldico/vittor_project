@@ -6,7 +6,7 @@
 
 <p><a href="{{asset('reg')}}">Registration</a></p>
 <p><a href="{{asset('login')}}">Login</a></p>
-<p><a href="">Blog</a></p>
+<p><a href="{{asset('blog')}}">Blog</a></p>
 
 
 </div>

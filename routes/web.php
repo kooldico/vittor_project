@@ -26,4 +26,13 @@ Route::get('login','UserController@login');
 
 Route::post('login-submit','UserController@loginSubmit');
 
+Route::get('blog','blogController@blog');
+
+Route::post('blog-submit','blogController@blogSubmit');
+
+Route::post('edit-blog','blogController@editBlog');
+
+Route::get('delete-blog','blogController@deleteBlog');
+
+Route::get('logout','UserController@logout');
 

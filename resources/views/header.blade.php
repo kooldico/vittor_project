@@ -1,9 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Main Page</title>
+<title>Vittor Project</title>
 
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style type="text/css">
+
+
+textarea {
+    width: 100%;
+    min-height: 100px;
+    max-height: 100px;
+    border-radius: 4px;
+}
+
+button.btn.btn-default {
+    max-width: 100px;
+    margin: 0 auto;
+    float: none;
+    display: block;
+}
+
 	
 	/* Full-width input fields */
 input[type=text], input[type=password] {
@@ -49,7 +67,10 @@ button {
     clear: both;
     display: table;
 }
-
+.fade {
+    opacity: 1;
+    transition: opacity .15s linear;
+}
 /* Change styles for cancel button and signup button on extra small screens */
 @media screen and (max-width: 300px) {
     .cancelbtn, .signupbtn {
