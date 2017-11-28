@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\View;
 use Illuminate\Http\Request;
 use Auth;
 use App\Blog;
@@ -120,7 +121,7 @@ class blogController extends Controller
 
             if($result)
             {
-                return view('blog');
+                return $this->blog();
             }
 
         }
@@ -156,6 +157,33 @@ class blogController extends Controller
         $Blog->delete();
 
         return ['success'=>true];
+    }
+
+
+    public function searchBlog(Request $request)
+    {
+        /*$search = Blog::whereNull('deleted_at')->where('title','like', $request->search)->get();
+
+        dd($search);*/
+
+        $blog = Blog::whereNull('blog.deleted_at')
+            ->leftJoin('users','users.id','=','blog.user_id')
+            ->where('title','like', $request->search)
+            ->select('users.first_name','users.last_name',
+                'blog.title','blog.description','blog.id')->get();
+
+        $data['data'] = $blog;
+        $data['auth'] = Auth::user();
+
+
+        $content = View::make('blogSection',$data);
+
+        $view = $content->render();
+        //dd($view);
+        return ['viewData'=>$view];
+
+
+
     }
 
 }

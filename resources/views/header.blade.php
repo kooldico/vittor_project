@@ -8,6 +8,17 @@
 <style type="text/css">
 
 
+    .search {
+        width: 130px !important;
+        transition: all 0.4s ease-in-out !important;
+    }
+
+    /* When the input field gets focus, change its width to 100% */
+    .search:focus {
+        width: 100% !important;
+    }
+
+
 textarea {
     width: 100%;
     min-height: 100px;

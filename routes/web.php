@@ -36,3 +36,5 @@ Route::get('delete-blog','blogController@deleteBlog');
 
 Route::get('logout','UserController@logout');
 
+Route::get('search-blog','blogController@searchBlog');
+
